@@ -3,6 +3,9 @@ title: "FAQ"
 description: "Get answers to common questions about CrunchForms"
 ---
 
+import NextSteps from '/snippets/next-steps.mdx';
+import Help from '/snippets/help.mdx';
+import BasicFormCodeSnippet from '/snippets/basic-form.mdx';
 
 <AccordionGroup>
   <Accordion title="What is CrunchForms?" icon="question">
@@ -10,12 +13,14 @@ description: "Get answers to common questions about CrunchForms"
     Crunchforms also helps keep junk out of your inbox, providing an intuitive online dashboard for form submissions and offering spam filtering features.
   </Accordion>
   <Accordion title="How does it work?" icon="arrow-progress">
-    You can create a form that match your site's appearance, and connect it to Crunchforms in seconds to collect and manage your submissions.
-    Simply make your unique crunchforms URL the action of your form:
-
     <Tip>
       View our [Quickstart Guide](/quickstart) to get started.
     </Tip>
+    You can create a form that match your site's appearance, and connect it to Crunchforms in seconds to collect and manage your submissions.
+    Simply make your unique crunchforms URL the action of your form:
+
+    <BasicFormCodeSnippet />
+
   </Accordion>
   <Accordion title="Is it free to use?" icon="dollar-sign">
     Yes, the basic usage of the service is free, forever. However, there may be premium or paid plans available with additional features.
@@ -23,6 +28,7 @@ description: "Get answers to common questions about CrunchForms"
     <Tip>
       Check out our [Pricing Page](https://crunchforms.com/pricing) for more info.
     </Tip>
+
   </Accordion>
   <Accordion title="What types of fields are supported?" icon="code">
     Crunchforms currently supports common form field types such as text fields, checkboxes, radio buttons, dropdown menus. We plan to add options for file uploads in the near future.
@@ -48,27 +54,6 @@ description: "Get answers to common questions about CrunchForms"
   </Accordion>
 </AccordionGroup>
 
-## Next steps
+<NextSteps />
 
-Now that you have your forms working, explore advanced configurations and features:
-
-<CardGroup cols={2}>
-  <Card title="Set up a Honeypot Field" icon="honey-pot" href="/essentials/markdown">
-    Learn MDX syntax and start writing your documentation.
-  </Card>
-  <Card title="Set up Cloudflare Turnstile" icon="cloudflare" href="/essentials/settings">
-    recaptcha coming soon.
-  </Card>
-  <Card title="Add environement variables" icon="square-code" href="/essentials/code">
-    Include syntax-highlighted code blocks.
-  </Card>
-  <Card title="Add additional verified email addresses" icon="at" href="/api-reference/introduction">
-    Auto-generate API docs from OpenAPI specs.
-  </Card>
-</CardGroup>
-
-## Need Help?
-
-<Card title="Get Support" icon="envelope" horizontal href="https://crunchforms.com/support">
-  Send us a note
-</Card>
+<Help />

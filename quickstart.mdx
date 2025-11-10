@@ -3,6 +3,10 @@ title: "Quickstart"
 description: "Get your form endpoint configured and start accepting submissions in minutes"
 ---
 
+import NextSteps from '/snippets/next-steps.mdx';
+import Help from '/snippets/help.mdx';
+import BasicFormCodeSnippet from '/snippets/basic-form.mdx';
+
 ## Get started in three steps
 
 [Create an account ](https://crunchforms.com/auth/signup)and get started in three easy steps
@@ -14,6 +18,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
 
     To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
+
   </Accordion>
   <Accordion title="Create a new Form" icon="edit">
     1. Install the Mintlify CLI: `npm i -g mint`
@@ -23,6 +28,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Your preview updates automatically as you edit files.
     </Tip>
+
   </Accordion>
   <Accordion title="Configure your form settings" icon="sliders">
     Your docs are built using MDX files, which combine Markdown and React components.
@@ -35,6 +41,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Check out our [Essentials](https://crunchforms.com/docs/essentials/markdown) guide to learn how to write and structure your docs.
     </Tip>
+
   </Accordion>
 </AccordionGroup>
 
@@ -45,18 +52,11 @@ description: "Get your form endpoint configured and start accepting submissions 
     Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
 
     Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
+
   </Accordion>
   <Accordion title="Add your form action" icon="code">
-    For a first change, let's update the name and colors of your docs site.
+    <BasicFormCodeSnippet />
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
   </Accordion>
 </AccordionGroup>
 
@@ -67,6 +67,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
 
     Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
+
   </Accordion>
   <Accordion title="Mark as read/unread" icon="envelope-open">
     For a first change, let's update the name and colors of your docs site.
@@ -79,6 +80,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Try changing the primary color to see an immediate difference!
     </Tip>
+
   </Accordion>
   <Accordion title="Archive submissions" icon="box-archive">
     For a first change, let's update the name and colors of your docs site.
@@ -91,6 +93,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Try changing the primary color to see an immediate difference!
     </Tip>
+
   </Accordion>
   <Accordion title="Export submissions" icon="file-export">
     For a first change, let's update the name and colors of your docs site.
@@ -103,6 +106,7 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Try changing the primary color to see an immediate difference!
     </Tip>
+
   </Accordion>
   <Accordion title="Monitor Usage" icon="monitor-waveform">
     For a first change, let's update the name and colors of your docs site.
@@ -115,30 +119,10 @@ description: "Get your form endpoint configured and start accepting submissions 
     <Tip>
       Try changing the primary color to see an immediate difference!
     </Tip>
+
   </Accordion>
 </AccordionGroup>
 
-## Next steps
+<NextSteps />
 
-Now that you have your forms working, explore advanced configurations and features:
-
-<CardGroup cols={2}>
-  <Card title="Set up a Honeypot Field" icon="honey-pot" href="/advanced/honeypot">
-    Learn MDX syntax and start writing your documentation.
-  </Card>
-  <Card title="Set up Cloudflare Turnstile" icon="cloudflare" href="/advanced/turnstile">
-    recaptcha coming soon.
-  </Card>
-  <Card title="Add environement variables" icon="square-code" href="/advanced/environments">
-    Include syntax-highlighted code blocks.
-  </Card>
-  <Card title="Add additional verified email addresses" icon="at" href="/advanced/emails">
-    Auto-generate API docs from OpenAPI specs.
-  </Card>
-</CardGroup>
-
-## Need Help?
-
-<Card title="Get Support" icon="envelope" horizontal href="https://crunchforms.com/support">
-  Send us a note
-</Card>
+<Help />
