@@ -18,15 +18,17 @@
             "pages": [
               "index",
               "quickstart",
+              "faq",
               "development"
             ]
           },
           {
             "group": "Advanced",
             "pages": [
-              "honeypot",
-              "turnstile",
-              "environments"
+              "advanced/honeypot",
+              "advanced/turnstile",
+              "advanced/environments",
+              "advanced/emails"
             ]
           }
         ]
