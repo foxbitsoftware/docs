@@ -5,31 +5,42 @@ description: "Get answers to common questions about CrunchForms"
 
 
 <AccordionGroup>
-  <Accordion title="Navigate to your dashboard" icon="dashboard">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
+  <Accordion title="What is CrunchForms?" icon="question">
+    This service is a platform that allows you to create and manage online forms for your website or application, without the need to set up any any of your own back end services. You can use Crunchforms to launch contact forms & mailing lists on your website in minutes.
+    Crunchforms also helps keep junk out of your inbox, providing an intuitive online dashboard for form submissions and offering spam filtering features.
   </Accordion>
-  <Accordion title="Create a new Form" icon="edit">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
+  <Accordion title="How does it work?" icon="arrow-progress">
+    You can create a form that match your site's appearance, and connect it to Crunchforms in seconds to collect and manage your submissions.
+    Simply make your unique crunchforms URL the action of your form:
 
     <Tip>
-      Your preview updates automatically as you edit files.
+      View our [Quickstart Guide](/quickstart) to get started.
     </Tip>
   </Accordion>
-  <Accordion title="Configure your form settings" icon="sliders">
-    Your docs are built using MDX files, which combine Markdown and React components.
-
-    Key files and directories:
-    - `docs/`: Contains all your documentation content in MDX format.
-    - `docs.json`: Configuration file for your docs site (name, colors, etc).
-    - `public/`: Static assets like images used in your docs.
+  <Accordion title="Is it free to use?" icon="dollar-sign">
+    Yes, the basic usage of the service is free, forever. However, there may be premium or paid plans available with additional features.
 
     <Tip>
-      Check out our [Essentials](https://crunchforms.com/docs/essentials/markdown) guide to learn how to write and structure your docs.
+      Check out our [Pricing Page](https://crunchforms.com/pricing) for more info.
     </Tip>
+  </Accordion>
+  <Accordion title="What types of fields are supported?" icon="code">
+    Crunchforms currently supports common form field types such as text fields, checkboxes, radio buttons, dropdown menus. We plan to add options for file uploads in the near future.
+  </Accordion>
+  <Accordion title="Will I receive email notifications for submissions?" icon="envelope">
+    Yes, you do have the option to receive email notifications whenever someone submits a form.
+    Crunchforms aims to keep you inbox clean by focusing on using push notifications and daily summary emails, keeping your submissions organized in the Crunchforms dashboard. However, you can opt to receive email notifications for each submission.
+  </Accordion>
+  <Accordion title="Where are my submissions stored?" icon="cloud">
+    Your form submissions are securely stored in the cloud and available to you through the Crunchforms dashboard. You can export your submissions at any time.
+  </Accordion>
+  <Accordion title="Can I request a new feature?" icon="lightbulb">
+    We would love to hear your new feature requests! Send them through our [Support Page](https://crunchforms.com/support).
+  </Accordion>
+  <Accordion title="Can I set up a form for one of my clients?" icon="store">
+    You can add additional email addresses to receive notifications (depending on your plan), as long as they can be verified.
+    After you add a new email address, they will receive an email with a link to verify the email address can receive notifications from your account.
+    See our guide on adding additional email addresses in the [Add Email Addresses](/advanced/emails) page.
   </Accordion>
 </AccordionGroup>
 
