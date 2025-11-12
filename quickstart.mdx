@@ -30,7 +30,7 @@ import BasicFormCodeSnippet from "/snippets/basic-form.mdx";
 
   </Accordion>
   <Accordion title="Configure your form settings" icon="sliders">
-    Learn more about configuring your form settings in our [Form Configuration guide](/form-configuration).
+    At this point you are ready to proceed to **Step 2**, but if you would like to Learn more about other form configurations and settings, check out our [Form Configuration guide](/form-configuration).
   </Accordion>
 </AccordionGroup>
 
@@ -53,61 +53,43 @@ import BasicFormCodeSnippet from "/snippets/basic-form.mdx";
 
 <AccordionGroup>
   <Accordion title="View your submissions" icon="inbox-full">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+    From your Crunchforms [dashboard](https://crunchforms.com/dashboard), 
+    you will see a list of the forms you've created, including a count of how many unready (new) submissions that form has.
 
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
+    Click on the form name or the *View* button to see all submissions for that form.
 
+    Click on a submission or the submission's *View* button to see the full details of that submission.
   </Accordion>
   <Accordion title="Mark as read/unread" icon="envelope-open">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
+    Opening a submission to view its details will automatically mark it as **read**. You can also mark it as **read**
+    without opening it by clicking the Unread/Read <Icon icon="circle" iconType="solid" /> icon beside the submission in the list. 
+    Clicking the icon again will toggle it back to **unread**.
 
   </Accordion>
   <Accordion title="Archive submissions" icon="box-archive">
-    For a first change, let's update the name and colors of your docs site.
+    To archive a submission, click the action dropdown next to the submission, or at the bottom of the submission detail modal. 
+    Click the **Archive** button when viewing the submission details.
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
+    <Note>
+      This will remove the submission from your form's submission list!
+    </Note>
 
   </Accordion>
   <Accordion title="Export submissions" icon="file-export">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
+    You can easily export your submission data as **Excel, CSV, or JSON** 
+    
+    1. From your dashboard, click on the form you would like to export to view the list of submissions.
+    2. Click the <Icon icon="ellipsis-vertical" /> button at the top right of your form's submission list.
+    3. Select `Export to Excel`, `Export to CSV`, or `Export to JSON` from the dropdown menu.
 
   </Accordion>
   <Accordion title="Monitor Usage" icon="monitor-waveform">
-    For a first change, let's update the name and colors of your docs site.
+    You can easily monitor your plan's usage from your [dashboard](https://crunchforms.com/dashboard).
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
+    Scroll to the bottom of the dashboard. You will see two usage stats:
+    
+    - **Submissions** used that month, out of your plan's monthly allowed submissions.
+    - **Forms** created, out of your plan's total allowed number of forms.
 
   </Accordion>
 </AccordionGroup>
