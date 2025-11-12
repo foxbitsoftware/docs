@@ -1,5 +1,7 @@
 # Mintlify Starter Kit
 
+https://fontawesome.com/ 
+
 Use the starter kit to get your docs deployed and ready to customize.
 
 Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
@@ -41,3 +43,5 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
 
 ### Resources
 - [Mintlify documentation](https://mintlify.com/docs)
+
+https://fontawesome.com/ 
