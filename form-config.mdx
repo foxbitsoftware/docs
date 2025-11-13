@@ -3,3 +3,65 @@ title: 'Form Configuration'
 description: 'Configuring your Crunchforms form settings and options'
 ---
 
+import NextSteps from '/snippets/next-steps.mdx';
+import Help from '/snippets/help.mdx';
+import GetStarted from '/snippets/get-started.mdx';
+
+## Overview
+This document outlines the settings available for configuring your Crunchforms forms. You can customize various aspects of your form to suit your needs.
+
+If you have any suggestions for features or improvements, please reach out to us through our [support page](https://crunchforms.com/support).
+
+## Form Settings
+<Card title="Start here" icon="rocket" horizontal href="/quickstart">
+  Follow our quickstart guide.
+</Card>
+### General Settings
+**Form Name**: Set a unique name for your form.
+
+**Response Type**: Choose how you want crunchforms to respond to submissions
+    - **Redirect**: Redirect to a URL for successful submissions or failed submissions
+    - **JSON**: Respond with a JSON status message
+    - **None**: Do nothing
+
+**Active**: Toggle whether the form is active and can accept submissions.
+
+### Notification Settings
+**Notification Email**: Specify an email address to receive notifications and summaries of form submissions.
+<Note>
+    You can only select from a list of verified emails associated with your Crunchforms account. 
+    To learn about verifying additional email addresses, read the [Add Email Addresses Guide](/advanced/emails).
+</Note>
+
+**Email Individual Submission Notifications**: Enable or disable email notifications for each individual submission.
+
+**Email Submission Summary**: Enable or disable email summaries of submissions.
+
+### Advanced Settings
+**Honeypot Field Name**: Enable a honeypot field to help prevent spam submissions. This must match the name of the honeypot field in your form.
+<Card
+    title="Add a Honeypot Field"
+    icon="honey-pot"
+    horizontal
+    href="/advanced/honeypot"
+>
+    Easy protection agains simple bots using a hidden field
+</Card>
+
+**Remove Branding from Notifications**: Remove branding and dashboard link from notification email.
+
+**Cloudflare Turnstile Secret Key**: Add your Cloudflare Turnstile secret key to enable advanced bot protection. 
+
+When a value is set in this field, Crunchforms will attempt to validate the submission token found in either the `cf-turnstile-response` or `turnstileToken` fields. If this field is set, submissions without a valid Turnstile token will be rejected.
+<Card
+    title="Validate with Cloudflare Turnstile"
+    icon="cloudflare"
+    horizontal
+    href="/advanced/turnstile"
+>
+    Advanced bot protection using Cloudflare Turnstile
+</Card>
+
+<NextSteps />
+
+<Help />
