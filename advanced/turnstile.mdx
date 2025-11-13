@@ -3,3 +3,146 @@ title: 'Cloudflare Turnstile'
 description: 'Advanced bot protection using Cloudflare Turnstile'
 ---
 
+import TurnstileForm from '/snippets/turnstile-form.mdx';
+import TurnstileReact from '/snippets/turnstile-react.mdx';
+import NextSteps from '/snippets/next-steps.mdx';
+import Help from '/snippets/help.mdx';
+
+
+Add anti-bot protection to your Crunchforms forms using Cloudflare Turnstile. Crunchforms handles server-side token validation out of the box and will reject submissions that contain invalid tokens.
+
+---
+
+## Why use Turnstile with Crunchforms
+
+* Turnstile provides a privacy-friendly CAPTCHA alternative from [Cloudflare][1].
+* Because Crunchforms already handles server-side validation of the Turnstile token, you only need to embed the widget on the front end and configure your keys.
+* Once configured, any submission via Crunchforms that fails the Turnstile token validation will be rejected automatically — minimal extra code required.
+
+---
+
+## Prerequisites
+
+Before you start:
+
+* Read through Cloudflare’s Turnstile [get started documentation][2] to understand how it works and set up your widget and keys.
+* You must have a Cloudflare account and access to the Turnstile widget creation.
+* You must have a Crunchforms form set up (you already have a form-endpoint configured).
+* Access to edit the HTML (or embed) of your form page to add the Turnstile widget.
+
+---
+
+## Step 1: Create your Turnstile widget (on Cloudflare)
+
+Follow [Cloudflare’s documentation][2] for this part:
+
+1. Log in to your Cloudflare Dashboard → Navigate to the *Turnstile* section.
+2. Click **Add Widget** 
+3. Provide a descriptive name, the domain(s) you will use it on.
+4. Choose a *Widget mode* (Managed / Non-Interactive / Invisible) based on your desired user-experience.
+5. Click Create — you will be shown **Site Key** (public) and **Secret Key** (private).
+6. (Optional) Adjust appearance, hostname restrictions, and other settings per Cloudflare’s guide.
+
+<Tip>
+    Keep your secret key secure. Don’t expose it in client-side code on your website. The Secret key will be added to your form configuration in Crunchforms and will be used to validate submitted tokens.
+</Tip>
+
+---
+
+## Step 2: Configure Crunchforms to use your Turnstile key
+
+In your Crunchforms dashboard, edit the form settings for the form you want to protect:
+
+1. Navigate to your [dashboard](https://crunchforms.com/dashboard)
+2. Edit the form settings by selecting **Edit Form Settings** from the action dropdown next to the form you would like to edit,
+or from the submission view, click the <Icon icon="ellipsis-vertical" /> button and select **Edit Form Settings**.
+3. Click on **Advanced Setttings** to expand the advanced options.
+4. Scroll to the bottom to find the Turnstile configuration section
+5. Enter your **Secret Key** for widget your created in Step 1 in the **Cloudflare Turnstile Secret Key** field.
+6. Save your changes.
+
+<Note>
+    If you have any value in the **Cloudflare Turnstile Site Key** field, Crunchforms will expect a token in your submissions and will attempt to validate it. If validation fails, the submission will be rejected. You can leave this field blank if you do not want to enforce Turnstile validation on this form.
+</Note>
+
+<Tip>
+    With Crunchforms, you do **not** need to write any custom server-side code for token validation — Crunchforms will automatically validate the token using Cloudflare’s siteverify API and reject invalid/expired tokens. Tokens must be submitted along with the form data under the `turnstileToken` field name.
+</Tip>
+
+---
+
+## Step 3: Embed the Turnstile widget into your form page
+
+Refer to Cloudflare's [Embed the Turnstile widget](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/) documentation for details. In summary:
+
+1. Load the Turnstile widget script (ideally placed in `<head>` or just prior to form). Example from Cloudflare:
+
+   ```html
+   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+   ```
+   
+2. Insert the widget markup inside your `<form>` element (before the submit button):
+
+   ```html
+   <div class="cf-turnstile"
+        data-sitekey="YOUR_SITE_KEY"
+        data-theme="auto"
+        data-callback="onTurnstileSuccess"></div>
+   ```
+   <Tip>
+    Replace `"YOUR_SITE_KEY"` with the **Site Key** from your Cloudflare Turnstile widget created in Step 1.
+   </Tip>
+
+3. (Optional) Add a `data-callback` JS function to capture the token and optionally enable/disable submit button once a token is generated:
+
+   ```js
+   function onTurnstileSuccess(token) {
+     document.getElementById("submit-button").disabled = false;
+   }
+   ```
+
+4. Ensure your form’s submit button is present and optionally disabled until widget success, if using callback.
+
+<Note>
+    Because Crunchforms handles the server validation step, you just need the widget on the client side. You will need to send the token along with the form submission. When you embed a Turnstile widget inside a `<form>` element, an invisible input field with the name `cf-turnstile-response` is automatically created. This field contains the verification token and gets submitted with your other form data. Crunchforms automatically validates it before accepting the submission.
+</Note>
+
+---
+
+## Testing your Turnstile integration
+
+See Cloudflare’s [Testing your Turnstile integration](https://developers.cloudflare.com/turnstile/troubleshooting/testing/) guide for details and dummy keys you can use for testing.
+
+---
+
+## Turnstile Form Example
+
+<TurnstileForm />
+
+## Use with Single Page Applications, React, and Next.JS
+
+There are community-built Turnstile components for React and Next.JS that you can use to integrate Turnstile into your SPA or React-based frontend. These components handle loading the Turnstile script and rendering the widget in a React-friendly way.
+
+One great option is [react-turnstile](https://www.npmjs.com/package/react-turnstile), which provides a simple React library for embedding Turnstile.
+
+### React Turnstile Example
+
+<TurnstileReact />
+
+When using these components, ensure that the generated token is included in the form submission under the `turnstileToken` field name or the `cf-turnstile-response` field name so that Crunchforms can validate it server-side.
+
+## References
+
+* [Cloudflare Turnstile — Get started guide][2]
+* [Cloudflare Turnstile — Protect your forms tutorial][3]
+
+---
+
+[1]: https://developers.cloudflare.com/turnstile/ "Overview · Cloudflare Turnstile docs"
+[2]: https://developers.cloudflare.com/turnstile/get-started/ "Get started · Cloudflare Turnstile docs"
+[3]: https://developers.cloudflare.com/turnstile/tutorials/login-pages/ "Protect your forms · Cloudflare Turnstile docs"
+
+
+<NextSteps />
+
+<Help />

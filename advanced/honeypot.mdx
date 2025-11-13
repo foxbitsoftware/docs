@@ -3,3 +3,75 @@ title: 'Honeypot Field'
 description: 'Easy protection agains simple bots using a hidden field'
 ---
 
+import HoneypotForm from '/snippets/honeypot-form.mdx';
+import NextSteps from '/snippets/next-steps.mdx';
+import Help from '/snippets/help.mdx';
+
+## Overview
+
+The Honeypot Field is a simple way to reduce spam without adding friction (such as CAPTCHAs) to your form. When enabled, your form includes a hidden input that human users will leave empty — but bots often complete. Any submission where the honeypot contains a value is treated as spam according to your form’s configuration.
+
+---
+
+## Enabling the Honeypot Field
+
+You can enable Honeypot protection in the Crunchforms dashboard:
+
+1. Navigate to your [dashboard](https://crunchforms.com/dashboard)
+2. Edit the form settings by selecting **Edit Form Settings** from the action dropdown next to the form you would like to edit,
+or from the submission view, click the <Icon icon="ellipsis-vertical" /> button and select **Edit Form Settings**.
+3. Click on **Advanced Setttings** to expand the advanced options.
+4. Enter the name of the honeypot field you would like to use (e.g., `hp_username`, `website`, etc.) in the **Honeypot Field Name** input. This must match the name attribute of the hidden field in your form. Alternatively, you can click the <Icon icon="arrows-spin" /> button to generate a random field name.
+
+---
+
+## Adding the Honeypot Field to your Form
+
+If you are building a custom frontend and POSTing to Crunchforms, include a hidden honeypot field in your HTML:
+
+<HoneypotForm />
+
+### Recommended Practices
+
+* **Do not use `display:none`** — bots often ignore fully hidden fields.
+* Push the field off-screen using positioning, not `visibility:hidden`.
+* Use a natural-sounding field name (e.g., `website`, `username`, `hp_name`).
+* Add `tabindex="-1"` to avoid keyboard focus.
+* Set `autocomplete` to a non-standard value (e.g., `"nope"`) to prevent browser autofill.
+
+---
+
+## API Usage
+
+If you are submitting JSON data, include the honeypot field like any other field:
+
+### Example Valid Submission
+
+```json
+{
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "{HoneypotFieldName}": ""
+}
+```
+
+### Example Spam Submission
+This submission would be rejected as spam because the honeypot field is filled:
+
+```json
+{
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "{HoneypotFieldName}": "Filled by bot"
+}
+```
+
+
+## Limitations
+
+* Honeypot fields work best against low-complexity bots.
+* Advanced bots may detect hidden fields. For stronger protection, consider other methods like [Cloudflare Turnstile](/advanced/turnstile) or **reCAPTCHA** (coming Soon).
+
+<NextSteps />
+
+<Help />
